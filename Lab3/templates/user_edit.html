@@ -1,66 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="/static/plugins/bootstrap-3.4.1/css/bootstrap.css">
-</head>
-<body>
-<nav class="navbar navbar-default">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#"> 银行用户管理系统 </a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a href="/depart/list/">部门管理</a></li>
-                <li><a href="/user/list/">用户管理</a></li>
-                <li><a href="#">Link</a></li>
+{% extends 'layout.html' %}
 
-
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">登录</a></li>
-
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">张舒恒 <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">个人资料</a></li>
-                        <li><a href="#">我的信息</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">注销</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+{% block content %}
 
 <div class="container">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"> Update a user </h3>
+                <h3 class="panel-title"> Update your new password </h3>
             </div>
             <div class="panel-body">
                 <form method="post">
 
-                    <div class="form-group">
-                        <label>User_Name</label>
-                        <input type="text" class="form-control" placeholder="User_Name" name="User_Name"
-                               value="{{ row_object.title }}"/>
-                    </div>
 
                     <div class="form-group">
-                        <label>User_Password</label>
-                        <input type="text" class="form-control" placeholder="User_Password" name="User_Password"/>
+                        <label>New_Password</label>
+                        <input type="text" class="form-control" placeholder="New_Password" name="User_Password"/>
                     </div>
 
                     <button type="submit" class="btn btn-success">submit</button>
@@ -68,7 +21,6 @@
             </div>
         </div>
     </div>
-<script src="/static/js/jquery-3.6.0.min.js"></script>
-<script src="/static/plugins/bootstrap-3.4.1/js/bootstrap.js"></script>
-</body>
-</html>
+
+
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+
+
+ <div style="position:relative; left: 200px">
+        <h3>List of bank_balance_year</h3>
+    </div>
+
+{% for bank in bank_balance_year %}
+    <div class="container">
+
+
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                {{ bank }}
+            </div>
+
+            <!-- Table -->
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Balance</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for item in bank_balance_year[bank] %}
+                    <tr>
+                        <td>{{ item }}</td>
+                        <td>{{ bank_balance_year[bank][item] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+ {% endfor %}
+ <div style="position:relative; left: 200px">
+        <h3>List of bank_balance_year</h3>
+    </div>
+
+{% for bank in bank_balance_year %}
+    <div class="container">
+
+
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                {{ bank }}
+            </div>
+
+            <!-- Table -->
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Balance</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for item in bank_balance_year[bank] %}
+                    <tr>
+                        <td>{{ item }}</td>
+                        <td>{{ bank_balance_year[bank][item] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+ {% endfor %}
+{% endblock %}

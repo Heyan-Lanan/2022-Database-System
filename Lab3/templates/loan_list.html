@@ -1,0 +1,92 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <div style="margin-bottom: 10px">
+            <a class="btn btn-success" href="/loan/add">
+                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                Create
+            </a>
+        </div>
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                List of Loan
+            </div>
+
+            <!-- Table -->
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Loan_ID</th>
+                    <th>Bank_Name</th>
+                    <th>Loan_Amount</th>
+                    <th>Loan_Status</th>
+                    <th>Pay_already</th>
+                    <th>Operating</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for obj in data_list %}
+                    <tr>
+                        <td>{{ obj.Loan_ID }}</td>
+                        <td>{{ obj.Bank_Name }}</td>
+                        <td>{{ obj.Loan_Amount }}</td>
+                        <td>{{ obj.Loan_Status }}</td>
+                        <td>{{ obj.Pay_already }}</td>
+                        <td>
+                            <a class="btn btn-danger btn-sm" href="/loan/delete/{{ obj.Loan_ID }}">
+                                delete<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div style="margin-bottom: 10px">
+            <a class="btn btn-success" href="/pay/add">
+                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                Create
+            </a>
+        </div>
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                List of Loan-Pay
+            </div>
+
+            <!-- Table -->
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Client_ID</th>
+                    <th>Loan_ID</th>
+                    <th>Pay_ID</th>
+                    <th>Pay_Amount</th>
+                    <th>Pay_Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for obj in data_list2 %}
+                    <tr>
+                        <td>{{ obj.Client_ID }}</td>
+                        <td>{{ obj.Loan_ID }}</td>
+                        <td>{{ obj.Pay_ID }}</td>
+                        <td>{{ obj.Pay_Amount }}</td>
+                        <td>{{ obj.Pay_Date }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

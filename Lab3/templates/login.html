@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>bank</title>
     <link rel="stylesheet" href="/static/plugins/bootstrap-3.4.1/css/bootstrap.css">
-  <style>
+    <style>
         .account {
             width: 400px;
             border: 1px solid #dddddd;
@@ -21,23 +21,56 @@
             margin-top: 10px;
             text-align: center;
         }
+
     </style>
 </head>
 <body>
+
+<!-- 先引入jquery.js，因为bootstrap.js依赖jquery.js -->
+<script src="/static/js/jquery-3.6.0.min.js"></script>
+<script src="/static/plugins/bootstrap-3.4.1/js/bootstrap.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <div class="account">
     <h2>Login</h2>
     <form method="post">
         <div class="form-group">
             <label for="User_Name">User_Name</label>
-            <input type="text" class="form-control" id="User_Name" placeholder="User_Name" name = "User_Name">
+            <input type="text" class="form-control" id="User_Name" placeholder="User_Name" name="User_Name">
         </div>
+
+        <div id="error1"></div>
+        <script>
+            const error1_html = "<div class=\"alert alert-danger alert-dismissible\" role=\"alert\">\n" +
+                "            <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span\n" +
+                "                    aria-hidden=\"true\">&times;</span></button>\n" +
+                "            <strong>Error!</strong> {{error1}} " +
+                "        </div>";
+            const error1 = '{{error1}}';
+            if (error1)
+                document.getElementById('error1').innerHTML = error1_html;
+        </script>
+
         <div class="form-group">
             <label for="User_Password">User_Password</label>
-            <input type="password" class="form-control" id="User_Password" placeholder="User_Password" name = "User_Password">
+            <input type="password" class="form-control" id="User_Password" placeholder="User_Password"
+                   name="User_Password">
         </div>
+
+        <div id="error2"></div>
+        <script>
+            const error2_html = "<div class=\"alert alert-danger alert-dismissible\" role=\"alert\">\n" +
+                "            <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span\n" +
+                "                    aria-hidden=\"true\">&times;</span></button>\n" +
+                "            <strong>Error!</strong> {{error2}} " +
+                "        </div>";
+            const error2 = '{{error2}}';
+            if (error2)
+                document.getElementById('error2').innerHTML = error2_html;
+        </script>
 
         <input type="submit" value="Submit" class="btn btn-success">
     </form>
-  </div>
+</div>
 </body>
 </html>

@@ -3,32 +3,68 @@
 {% block content %}
 
 <div class="container">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title"> Create a new Loan </h3>
-            </div>
-            <div class="panel-body">
-                <form method="post">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"> Create a new Loan </h3>
+        </div>
+        <div class="panel-body">
+            <form method="post">
 
-                    <div class="form-group">
-                        <label>Loan_ID</label>
-                        <input type="text" class="form-control" placeholder="Loan_ID" name="Loan_ID"/>
-                    </div>
+                <div class="form-group">
+                    <label>Loan_ID</label>
+                    <input type="text" class="form-control" placeholder="Loan_ID" name="Loan_ID"/>
+                </div>
 
-                    <div class="form-group">
-                        <label>Bank_Name</label>
-                        <input type="text" class="form-control" placeholder="Bank_Name" name="Bank_Name"/>
-                    </div>
+                <div id="error1"></div>
+                <script>
+                    const error1_html = "<div class=\"alert alert-danger alert-dismissible\" role=\"alert\">\n" +
+                        "            <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span\n" +
+                        "                    aria-hidden=\"true\">&times;</span></button>\n" +
+                        "            <strong>Error!</strong> {{error1}} " +
+                        "        </div>";
+                    const error1 = '{{error1}}';
+                    if (error1)
+                        document.getElementById('error1').innerHTML = error1_html;
+                </script>
 
-                    <div class="form-group">
-                        <label>Loan_Amount</label>
-                        <input type="text" class="form-control" placeholder="Loan_Amount" name="Loan_Amount"/>
-                    </div>
+                <div class="form-group">
+                    <label>Bank_Name</label>
+                    <input type="text" class="form-control" placeholder="Bank_Name" name="Bank_Name"/>
+                </div>
 
-                    <button type="submit" class="btn btn-success">submit</button>
-                </form>
-            </div>
+                <div id="error2"></div>
+                <script>
+                    const error2_html = "<div class=\"alert alert-danger alert-dismissible\" role=\"alert\">\n" +
+                        "            <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span\n" +
+                        "                    aria-hidden=\"true\">&times;</span></button>\n" +
+                        "            <strong>Error!</strong> {{error2}} " +
+                        "        </div>";
+                    const error2 = '{{error2}}';
+                    if (error2)
+                        document.getElementById('error2').innerHTML = error2_html;
+                </script>
+
+                <div class="form-group">
+                    <label>Loan_Amount</label>
+                    <input type="text" class="form-control" placeholder="Loan_Amount" name="Loan_Amount"/>
+                </div>
+
+                <div id="error3"></div>
+                <script>
+                    const error3_html = "<div class=\"alert alert-danger alert-dismissible\" role=\"alert\">\n" +
+                        "            <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span\n" +
+                        "                    aria-hidden=\"true\">&times;</span></button>\n" +
+                        "            <strong>Error!</strong> {{error3}} " +
+                        "        </div>";
+                    const error3 = '{{error3}}';
+                    if (error3)
+                        document.getElementById('error3').innerHTML = error3_html;
+                </script>
+
+                <button type="submit" class="btn btn-success">submit</button>
+            </form>
         </div>
     </div>
+</div>
 
 {% endblock %}
